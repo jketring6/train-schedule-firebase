@@ -4,21 +4,74 @@
 <head>
     <title>Train Schedule</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
-
-
-	
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-  <script type="text/javascript" src="assets/javascript/apps.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Train</h1>
+                <h1>Times</h1>
+            </div>
+            <div class="col-md-6">
+                <img src="assets/images/thomas.png" class="thomasPic" alt="thomas the train">
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">Current Train Schedule</div>
+                <table class="table" id="current-trains">
+                    <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="train-row">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default panel-transparent">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Add Train</h3>
+                </div>
+                <div class="panel-body" id="add-trains">
+                    <form>
+                        <div class="form-group">
+                            <label for="name-input">Train Name</label>
+                            <input type="text" class="form-control" id="name-input" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination-input">Destination</label>
+                            <input type="text" class="form-control" id="destination-input" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="time-input">First Train Time (HH:mm - military time)</label>
+                            <input type="text" class="form-control" id="time-input" placeholder="ex: 01:20">
+                        </div>
+                        <div class="form-group">
+                            <label for="rate-input">Frequency (min)</label>
+                            <input type="number" class="form-control" id="frequency-input" placeholder="">
+                        </div>
+                        <button type="submit" class="btn btn-default" id="submit-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
 </html>

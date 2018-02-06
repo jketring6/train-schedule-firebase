@@ -1,0 +1,37 @@
+body {
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: right;
+    font-family: Elephant;
+    font-size: 145px;
+    color: white;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+th {
+    font-weight: bolder;
+}
+
+.panel-transparent {
+    background: none;
+}
+
+.panel-transparent .panel-heading {
+    background: rgba(122, 130, 136, 0.2);
+}
+
+.panel-transparent .panel-body {
+    background: rgba(46, 51, 56, 0.2);
+}
